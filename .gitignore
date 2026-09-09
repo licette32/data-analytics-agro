@@ -1,0 +1,24 @@
+# Datos
+*.csv
+*.xlsx
+*.parquet
+proyecto-final/datos/*
+!proyecto-final/datos/.gitkeep
+
+# Entornos
+.venv/
+venv/
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Power BI (binarios, no versionar)
+*.pbix
+
+# Sistema
+.DS_Store
+Thumbs.db
