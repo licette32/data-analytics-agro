@@ -65,3 +65,5 @@ abline(lm(rendimiento_t_ha ~ lluvia_mm, data = datos),
 pie(table(datos$tipo_suelo),
     main = "Proporcion de lotes segun tipo de suelo",
     col = c("sandybrown", "chocolate", "wheat"))
+
+    
