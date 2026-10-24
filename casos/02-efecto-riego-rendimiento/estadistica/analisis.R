@@ -8,9 +8,9 @@
 
  # 1. Cargar los datos
 
-setwd("C:/Users/bever/Desktop/ADAGRO/data-analytics-agro/casos/02-efecto-riego-rendimiento")
-getwd()                 
-list.files("data")      
+#setwd("C:/Users/bever/Desktop/ADAGRO/data-analytics-agro/casos/02-efecto-riego-rendimiento")
+#getwd()                 
+#list.files("data")      
 datos <- read.csv("data/datos_agricultura.csv", fileEncoding = "UTF-8-BOM")
  
  # 2. Mostrar los primeros 6 registros
@@ -313,4 +313,28 @@ aggregate(cbind(lluvia_mm, fertilizante_kg_ha) ~ riego, data = datos, FUN = mean
 
 # Conclusión General
 
-# 
+# La base tiene 30 lotes y 8 variables, sin datos faltantes. El rendimiento medio es 4,74 t/ha, pero 
+# ningú lote rinde cerca de este valor: hay dos grupos (soja y trigo entre 2,6 y 4,3 t/ha; maíz entre
+# 6,5 y 8,1 t/ha), y eso explicaria la gran dispersión (IQR de 3,75 t/ha) sin valores atípicos.
+# La lluvia acompaña al rendimiento dentro de cada cultivo, pero la mayor parte de la diferencia entre lotes viene del cultivo.
+# Los lotes con riego rinden más (1,85 t/ha), pero esa brecha se reduce a unos 0,4 t/ha al comparar dentro de cada cultivo.
+# Como el análisis es descriptivo y se basa en 30 lotes, los resultados describen esta base:
+# no permiten generalizar ni establecer causas, y sin precios ni costos tampoco permiten decir que cultivo o práctica conviene económicamente.
+
+#---------------------------------------------------------------
+# Principios básicos de la Estadística aplicados en este TP
+
+# - Población y muestra: los 30 lotes son una muestra; no sabemos cómo se eligieron, por eso no generalizamos.
+# - Tipos de variables:
+      # categóricas (cultivo, suelo, riego)
+      # numéricas (rendimiento, lluvia, fertilizante, superficie)
+      # identificador (lote)
+# - Estadística descriptiva vs inferencial: este TP describe los datos; no hace inferencia sobre una población más grande.
+# - Medidas resumen: 
+      # tendencia central (media, mediana, moda)
+      # dispersión (rango, IQR)
+      # posición (cuartiles)
+ # Ninguna sola alcanza si la distribución tiene dos grupos
+# - Variabilidad y forma de la distribución: el promedio solo no describe los datos; hay que mirar como se reparten (histograma, boxplot)
+# - Visualización: el gráfico se elige según el tipo de variable.
+# - Correlación no implica causalidad, y las variables confusoras (cultivo) pueden inflar una diferencia entre grupos.
