@@ -4,7 +4,7 @@
 *.parquet
 proyecto-final/datos/*
 !proyecto-final/datos/.gitkeep
-
+.pdf
 # Entornos
 .venv/
 venv/
